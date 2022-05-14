@@ -8,7 +8,9 @@
 
 ## Công nghệ sử dụng 
 
-AWS EMR
+
+- Apache Hadoop, Apache Hive
+- AWS EMR, AWS EC2
 
 
 ## Thành viên tham gia Project
