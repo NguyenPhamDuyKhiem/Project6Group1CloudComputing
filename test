@@ -1,0 +1,38 @@
+Project15Group1CloudComputing
+Trang web Ecommerence bán hàng kết nối với Amazon Aurora.
+
+Tạo Amazon Aurora tạo database link nhóm tham khảo:https://www.youtube.com/watch?v=n_QplvENyLY&feature=youtu.be
+Tạo data base sử dụng script nhóm đã up lên git connect Mysql
+Các bước xây dựng trang web
+Cài đặt project
+Tải source từ git quàn sử dùng Eclipse để quản lý code.
+Tạo EC2 instance với AMI linux
+Tải Putty với key .ppk của EC2 Instace vừa tạo
+Sau đó sử dụng Putty để connect
+Lấy DNS EC2 để connect Sau khi đã kết nối vào thì chúng ta tạo thư mục java để chưa các môi trường cần thiết để deploy app.
+Dowload java 8
+$ wget https://builds.openlogic.com/downloadJDK/openlogic-openjdk-jre/11.0.8%2B10/openlogic-openjdk-jre-11.0.8%2B10-linux-x64-el.rpm
+Sau khi tải xong ta thực hiện giải nén
+$ tar xvzf openlogic-openjdk-jre-11.0.8%2B10-linux-x64-el.rpm
+Tải Tomcat 8
+$ wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.78/bin/apache-tomcat-8.5.78.tar.gz
+Ta giải nén sau khi tải về
+$ tar xvzf apache-tomcat-8.5.78.tar.gz
+Để tiết kiệm bộ nhớ chúng ta xóa các file không cần thiết
+$ rm -r openlogic-openjdk-jre-11.0.8%2B10-linux-x64-el.rpm
+$ rm -r apache-tomcat-8.5.78.tar.gz
+Sử dụng các lệnh sau để thực chạy tomcat
+$ cd apache-tomcat-8.5.78/
+$ cd bin
+$ ./startup.sh
+$ ps -ef | grep tomcat
+$ wget http://localhost:8080 # sử dụng port 8080 của tomcat
+Cấu hình tài khoản để đăng nhập vào tomcat server
+trở về thư mục apache-tomcat: $ cd ..
+$ vi conf/tomcat-users.xml
+thêm vào cuối file nội dung:
+Sau thực hiện chạy lại: $ ./startup.sh
+$ ps -ef | grep tomcat
+$ wget http://localhost:8080 # sử dụng port 8080 của tomcat
+Dùng eclipse export file war để deloy lên tomcat-server
+Cảm ơn mọi người đã ghé qua !
