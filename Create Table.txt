@@ -1,0 +1,26 @@
+create table products (product_id int, product_name string, brand_id int, category_id int, model_year int, list_price double) 
+row format delimited fields terminated by ',';
+------------------------------------------------
+create table categories (category_id int,category_name string)
+row format delimited fields terminated by ',';
+------------------------------------------------
+create table brands (brand_id int,brand_name string)
+row format delimited fields terminated by ',';
+-------------------------------------------------
+create table customers (customer_id int,first_name string,last_name string,phone string,email string,street string,city string,state string,zip_code string)
+row format delimited fields terminated by ',';
+-------------------------------------------------
+create table stores (store_id int,store_name string,phone string,email string,street string,city string,state string,zip_code string)
+row format delimited fields terminated by ',';
+-------------------------------------------------
+create table staffs (staff_id int,first_name string,last_name string,email string,phone string,active int,store_id int,manager_id int)
+row format delimited fields terminated by ',';
+-------------------------------------------------
+create table orders (order_id int,customer_id int,order_status int,order_date string,required_date string,shipped_date string,store_id int,staff_id int)
+row format delimited fields terminated by ',';
+-------------------------------------------------
+create table order_items (order_id int,item_id int,product_id int,quantity int,list_price double,discount double)
+row format delimited fields terminated by ',';
+-------------------------------------------------
+create table stocks (store_id int,product_id int,quantity int)
+row format delimited fields terminated by ',';
